@@ -2,6 +2,22 @@
 #define _BINARY_TREES_H_
 
 #include <stddef.h>
+#include <limits.h>
+
+/* Structure for a binary search tree node 
+ * @n: Integer stored in the node
+ * @bst: pointer to the tree
+ * @left: pointer to the left child node
+ * @right: pointer to the right child node*/
+
+struct bst_s {
+    int n;
+    struct bst_s *left;
+    struct bst_s *right;
+};
+
+typedef struct bst_s bst_t;
+
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -45,4 +61,8 @@ int binary_tree_is_ancestor(const binary_tree_t *node, const binary_tree_t *targ
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 int binary_tree_is_complete(const binary_tree_t *tree);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
+binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+int binary_tree_is_bst(const binary_tree_t *tree);
+int is_bst_util(const binary_tree_t *tree, int min, int max);
+bst_t *bst_insert(bst_t **tree, int value);
 #endif /* _BINARY_TREES_H_ */
