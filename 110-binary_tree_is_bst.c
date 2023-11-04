@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * is_bst_util - Recursive function to check if a binary tree is a BST.
  * @tree: Pointer to the root node of the tree.
@@ -7,6 +6,8 @@
  * @max: Maximum allowed value for the current node.
  * Return: 1 if tree is a valid BST, 0 otherwise.
  */
+
+
 int is_bst_util(const binary_tree_t *tree, int min, int max)
 {
     if (tree == NULL)
